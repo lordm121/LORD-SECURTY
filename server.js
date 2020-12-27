@@ -33,7 +33,7 @@ const prefix = "5!";
 const cooldown = new Set()
 const cdtime = 10;
 
-client.login("NzY1MzE4MDkxMzczOTM2Njgx.X4TEAw.Fe0E5YXa_XECAqafNDx9y0iyrR4");
+client.login("NzY1MzE4MDkxMzczOTM2Njgx.X4TEAw.mc63PjbLaKY8Gd6076EmeSBJSzY");
 client.on("ready", async () => {
   console.log(`${client.user.username} Ready .`);
   console.log(`${client.guilds.cache.size} Servers .`);
