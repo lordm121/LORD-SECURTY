@@ -970,13 +970,29 @@ client.on("message", message => {
 
 
 
-////////
+////////info bot
  
 
-  
+  client.on('message', msg =>{
+if(msg.content === prefix +"info-bot"){
+const embed = new Discord.MessageEmbed()
+.setAuthor(client.user.username,client.user.avatarURL())
+.setThumbnail(client.user.avatarURL())
+.setColor("RANDOM")
+.setTitle(` ${client.user.username} `)
+.addField('``servers``', ` ${client.guilds.cache.size} `, true)
+.addField('``channels``', ` ${client.channels.cache.size} `, true)
+.addField('``Users``', ` ${client.users.cache.size} `, true)
+.addField('``My Name``' , ` ${client.user.tag}` , true)
+.addField('``DEVELOPER BOT``' , ` [<@386188491953799178>] ` , true)
+.setFooter(`CODED BY LORD`)
+msg.channel.send(embed);
+}
+});
 
 
-////////
+
+////////Ping
 
 client.on('message', message => {
     if(message.content.startsWith(prefix + 'ping')) {
@@ -1003,10 +1019,10 @@ if (cooldown.has(message.author.id)) {
 
 client.on("message", message => {
   //zalm
-  if (message.content.includes("https://discord.gg/")) {
+  if (message.content.includes("http://")) {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) {
       message.delete();
-      message.reply("بڵاوکردنەوەی سێرڤەری تر ڕێگە پێنەدراوە");
+      message.reply("share link it's not supported her");
       message.react("🚫");
     }
     
