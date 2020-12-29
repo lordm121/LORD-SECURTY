@@ -31,7 +31,7 @@ const Discord = require("discord.js");
 const cmd = require("node-cmd");
 const prefix = "5!";
 const cooldown = new Set()
-const cdtime = 10;
+const cdtime = 5;
 
 client.login("NzY1MzE4MDkxMzczOTM2Njgx.X4TEAw.mc63PjbLaKY8Gd6076EmeSBJSzY");
 client.on("ready", async () => {
@@ -177,12 +177,12 @@ client.on("guildCreate", hama => {
 client.on("message", async message => {
   if (message.content.startsWith(prefix + "help")) {
 if (cooldown.has(message.author.id)) {
-      return message.reply("please wait for 10 second");
+      return message.reply("please wait for 5 second");
     }
     cooldown.add(message.author.id);
     setTimeout(() => {
       cooldown.delete(message.author.id);
-    }, cdtime * 10000); 
+    }, cdtime * 5000); 
     let help = new Discord.MessageEmbed()
       .setColor("RANDOM")
       .setAuthor(message.author.username, message.author.displayAvatarURL)
@@ -205,12 +205,12 @@ ${prefix}anti bot[on / off]
 
  ____moderation 🔒Command____
         ${prefix}settings
-${prefix}unlock,${prefix}lock
-${prefix}say,${prefix}ban
-${prefix}mute,${prefix}unmute
-${prefix}bans,${prefix}kick
+${prefix}unlock, ${prefix}lock
+${prefix}say,     ${prefix}ban
+${prefix}mute, ${prefix}unmute
+${prefix}bans,   ${prefix}kick
 
-__ [I N V I T E](https://discord.com/api/oauth2/authorize?client_id=765318091373936681&permissions=8&scope=bot) __  __ [S U P P O R T](https://discord.gg/yE7u7UMYyQ) __
+__ [I N V I T E](https://discord.com/api/oauth2/authorize?client_id=765318091373936681&permissions=8&scope=bot) __  __ [S U P P O R T](https://discord.gg/M2HggrPvs4) __
 
 
 `);
@@ -971,23 +971,32 @@ client.on("message", message => {
 
 
 ////////info bot
- 
-
-  client.on('message', msg =>{
-if(msg.content === prefix +"info-bot"){
-const embed = new Discord.MessageEmbed()
-.setAuthor(client.user.username,client.user.avatarURL())
-.setThumbnail(client.user.avatarURL())
-.setColor("RANDOM")
-.setTitle(` ${client.user.username} `)
-.addField('``servers``', ` ${client.guilds.cache.size} `, true)
-.addField('``channels``', ` ${client.channels.cache.size} `, true)
-.addField('``Users``', ` ${client.users.cache.size} `, true)
-.addField('``My Name``' , ` ${client.user.tag}` , true)
-.addField('``DEVELOPER BOT``' , ` [<@386188491953799178>] ` , true)
-.setFooter(`CODED BY LORD`)
-msg.channel.send(embed);
-}
+ client.on("message", msg => {
+  if (msg.content === prefix + "bot-info") {
+    if (cooldown.has(msg.author.id)) {
+      return msg.reply("please wait for 5 second");
+    }
+    cooldown.add(msg.author.id);
+    setTimeout(() => {
+      cooldown.delete(msg.author.id);
+    }, cdtime * 5000);
+    const embed = new Discord.MessageEmbed()
+      .setAuthor(client.user.username, client.user.avatarURL())
+      .setThumbnail(client.user.avatarURL())
+      .setColor("RANDOM")
+      .setTitle(` ${client.user.username} `)
+.addField("`info`",`my work is secure your server`,true)
+      .addField("`servers`", ` ${client.guilds.cache.size} `, true)
+      .addField("`channels`", ` ${client.channels.cache.size} `, true)
+      .addField("``Users``", ` ${client.users.cache.size} `, true)
+      .addField("`My Devloper`", `[<@386188491953799178>]`,  true)
+      
+      .addField("`My Name`", ` ${client.user.tag}`, true)
+      .addField("`My ID`", ` ${client.user.id} `, true)
+      
+    .setImage("https://cdn.discordapp.com/attachments/779263268426481695/793468540245114880/image0.png");
+    msg.channel.send(embed);
+  }
 });
 
 
