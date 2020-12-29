@@ -188,6 +188,7 @@ if (cooldown.has(message.author.id)) {
       .setAuthor(message.author.username, message.author.displayAvatarURL)
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
+For partner please give MANAGE_MESSAGES permission
 __INFO ℹ️ BOT__
 ${prefix}ping
 ${prefix}invite
@@ -202,7 +203,7 @@ ${prefix}anti roleC[1 to 4]
 ${prefix}anti roleD[1 to 4]
 ${prefix}anti bot[on / off]
 
-
+Best of anti spam & anti everyone &here &anti links
  ____moderation 🔒Command____
         ${prefix}settings
 ${prefix}unlock, ${prefix}lock
