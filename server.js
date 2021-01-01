@@ -203,13 +203,13 @@ __Security🛡️Commands__
 \`${prefix}anti roleC[1 to 4]\`  
 \`${prefix}anti roleD[1 to 4]\`
 \`${prefix}anti bot[on / off]\`
-
+\`${prefix}anti time 0.1 \`
  ____moderation 🔒Command____
 \`${prefix}settings\`
 \`${prefix}unlock\`, \`${prefix}lock\`
 \`${prefix}say\`, \`${prefix}ban\`
 \`${prefix}mute\`, \`${prefix}unmute\`
-\`${prefix}bans\`, \`${prefix}kick
+\`${prefix}bans\`, \`${prefix}kick\`
 
 Best of anti spam & anti everyone &here &anti links
 
@@ -970,7 +970,7 @@ client.on("message", message => {
     const embed = new Discord.MessageEmbed()
       .setTitle("Support server")
       .setColor("RANDOME")
-      .setDescription("**[Click here](https://discord.gg/yE7u7UMYyQ)**");
+      .setDescription("**[Click here](https://discord.gg/zSnPn67r)**");
     message.channel.send(embed);
   }
 });
