@@ -190,26 +190,28 @@ if (cooldown.has(message.author.id)) {
       .setDescription(`
 For partner please give MANAGE_MESSAGES permission
 __INFO ℹ️ BOT__
-${prefix}ping
-${prefix}invite
-${prefix}support
-${prefix}bot-info
+\`${prefix}ping\`
+\`${prefix}invite\`
+\`${prefix}support\`
+\`${prefix}bot-info\`
+
 __Security🛡️Commands__
-${prefix}anti ban[1 to 4]    
-${prefix}anti kick[1 to 4]
-${prefix}anti channelC[1 to 4]
-${prefix}anti channelD [1 to 4] 
-${prefix}anti roleC[1 to 4]   
-${prefix}anti roleD[1 to 4]
-${prefix}anti bot[on / off]
+\`${prefix}anti ban[1 to 4]\`   
+\`${prefix}anti kick[1 to 4]\`
+\`${prefix}anti channelC[1 to 4]\`
+\`${prefix}anti channelD [1 to 4]\`
+\`${prefix}anti roleC[1 to 4]\`  
+\`${prefix}anti roleD[1 to 4]\`
+\`${prefix}anti bot[on / off]\`
+
+ ____moderation 🔒Command____
+\`${prefix}settings\`
+\`${prefix}unlock\`, \`${prefix}lock\`
+\`${prefix}say\`, \`${prefix}ban\`
+\`${prefix}mute\`, \`${prefix}unmute\`
+\`${prefix}bans\`, \`${prefix}kick
 
 Best of anti spam & anti everyone &here &anti links
- ____moderation 🔒Command____
-        ${prefix}settings
-${prefix}unlock, ${prefix}lock
-${prefix}say,     ${prefix}ban
-${prefix}mute, ${prefix}unmute
-${prefix}bans,   ${prefix}kick
 
 __ [I N V I T E](https://discord.com/api/oauth2/authorize?client_id=765318091373936681&permissions=8&scope=bot) __  __ [S U P P O R T](https://discord.gg/M2HggrPvs4) __
 
@@ -907,7 +909,7 @@ let antibots = JSON.parse(fs.readFileSync("./antibots.json", "utf8")); //require
 client.on("message", message => {
   if (message.content.startsWith(prefix + "anti bot on")) {
    if (message.member.id !== message.guild.ownerID)
-      return message.reply("Only Ownership can use this command");
+      return;
 
  
     antibots[message.guild.id] = {
@@ -926,7 +928,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.content.startsWith(prefix + "anti bot off")) {
     if (message.member.id !== message.guild.ownerID)
-      return message.reply("Only Ownership can use this command");
+      return;
 
     
     antibots[message.guild.id] = {
