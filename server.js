@@ -344,7 +344,9 @@ client.on("message", message => {
       time: 0.1
     };
   if (message.content.startsWith(prefix + "anti")) {
-    if (!message.member.hasPermission("OWNERSHIP")) return;
+    if (message.member.id !== message.guild.ownerID)
+      return message.channel.send("Only Ownership can use this command");
+
     if (message.content.startsWith(prefix + "anti ban")) {
       if (!num)
         return message.channel.send("**" + ghallat + " | Type A `Number` .**");
@@ -905,7 +907,7 @@ let antibots = JSON.parse(fs.readFileSync("./antibots.json", "utf8")); //require
 client.on("message", message => {
   if (message.content.startsWith(prefix + "anti bot on")) {
     if (!message.channel.guild) return;
-    if (!message.member.hasPermission("OWNERSHIP")) return;
+ 
     antibots[message.guild.id] = {
       onoff: "On"
     };
@@ -922,7 +924,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.content.startsWith(prefix + "anti bot off")) {
     if (!message.channel.guild) return;
-    if (!message.member.hasPermission("OWNERSHIP")) return;
+    
     antibots[message.guild.id] = {
       onoff: "Off"
     };
