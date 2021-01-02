@@ -29,7 +29,7 @@ const dateFormat = require("dateformat");
 var table = require("table").table;
 const Discord = require("discord.js");
 const cmd = require("node-cmd");
-const prefix = "5!";
+const prefix = "5";
 const cooldown = new Set()
 const cdtime = 5;
 
@@ -162,7 +162,7 @@ ${antibots[message.guild.id].onoff}
 /////////
 /*
 client.on("guildCreate", hama => {
-  if (hama.memberCount < 100) {
+  if (hama.memberCount < 50) {
     console.log(
       `  name ( ${hama.name} ) zhmaray memberakan ( ${hama.memberCount}) created by MrHAMA`
     ); //by zalm
