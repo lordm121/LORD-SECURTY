@@ -160,7 +160,7 @@ ${antibots[message.guild.id].onoff}
 }); 
 
 /////////
-
+/*
 client.on("guildCreate", hama => {
   if (hama.memberCount < 100) {
     console.log(
@@ -169,7 +169,7 @@ client.on("guildCreate", hama => {
     hama.leave();
   }
 });
-
+*/
 //////
 
 
