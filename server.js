@@ -95,7 +95,7 @@ const AntiSpam = new Antispam({
 
 client.on("message", message => {
 
-  if (message.content === prefix + "settings") {
+  if (message.content === prefix + "settingss") {
 
     if (!message.channel.guild) 
 
@@ -205,7 +205,7 @@ __Security🛡️Commands__
 \`${prefix}anti bot[on / off]\`
 \`${prefix}anti time 0.1 \`
  ____moderation 🔒Command____
-\`${prefix}settings\`
+
 \`${prefix}unlock\`, \`${prefix}lock\`
 \`${prefix}say\`, \`${prefix}ban\`
 \`${prefix}mute\`, \`${prefix}unmute\`
