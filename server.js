@@ -95,9 +95,9 @@ const AntiSpam = new Antispam({
 
 client.on("message", message => {
 
-  if (message.content === prefix + "settingss") {
+  if (message.content === prefix + "settings") {
 
-    if (!message.channel.guild) 
+    if (!message.channel.guild) return;
 
       return message.channel.send("ONLY FOR SERVERS");
 
@@ -147,9 +147,7 @@ AntiTime
 
 Enabled:🟢 
 Maximum Time : ${config[message.guild.id].time}
- - 
-AntiBot:🟢 
-${antibots[message.guild.id].onoff}
+
 
 `);
 
@@ -207,10 +205,10 @@ __Security🛡️Commands__
  ____moderation 🔒Command____
 
 \`${prefix}unlock\`, \`${prefix}lock\`
-\`${prefix}say\`, \`${prefix}ban\`
+\`${prefix}say\`,   \`${prefix}ban\`
 \`${prefix}mute\`, \`${prefix}unmute\`
 \`${prefix}bans\`, \`${prefix}kick\`
-
+\`${prefix}settings\`
 Best of anti spam & anti everyone &here &anti links
 
 __ [I N V I T E](https://discord.com/api/oauth2/authorize?client_id=765318091373936681&permissions=8&scope=bot) __  __ [S U P P O R T](https://discord.gg/M2HggrPvs4) __
@@ -1040,7 +1038,7 @@ client.on("message", message => {
   if (message.content.includes("http://")) {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) {
       message.delete();
-      message.reply("share link it's not supported her");
+      message.reply("share link it's not supported here");
       message.react("🚫");
     }
     
