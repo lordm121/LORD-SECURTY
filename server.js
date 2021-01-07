@@ -203,10 +203,9 @@ __Security🛡️Commands__
  ____moderation 🔒Command____
 
 \`${prefix}unlock\`, \`${prefix}lock\`
-\`${prefix}say\`,   \`${prefix}ban\`
-\`${prefix}mute\`, \`${prefix}unmute\`
-\`${prefix}bans\`, \`${prefix}kick\`
-\`${prefix}settings\`
+\`${prefix}ban\`,   \`${prefix}mute\`,
+ \`${prefix}unmute\`,\`${prefix}bans\`,
+ \`${prefix}kick\`,\`${prefix}settings\`
 Best of anti spam & anti everyone &here &anti links
 
 __ [I N V I T E](https://discord.com/api/oauth2/authorize?client_id=765318091373936681&permissions=8&scope=bot) __  __ [S U P P O R T](https://discord.gg/M2HggrPvs4) __
