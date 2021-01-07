@@ -97,9 +97,7 @@ client.on("message", message => {
 
   if (message.content === prefix + "settings") {
 
-    if (!message.channel.guild) return;
-
-      return message.channel.send("ONLY FOR SERVERS");
+   
 
     if (!message.member.hasPermission("ADMINISTRATOR"))
 
