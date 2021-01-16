@@ -1042,35 +1042,55 @@ client.on("message", message => {
     
   }
 });
+////////
+
+//////
+client.on('message',async msg => {
+
+  if(msg.content.startsWith(prefix + "shutdown")) {
+
+    
+
+       if(msg.author.id != "386188491953799178") return msg.channel.send("Nope!")
+
+    try {
+
+        await msg.channel.send("Bot is shutting down...")
+
+        process.exit()
+
+    } catch(e) {
+
+        msg.channel.send(`ERROR: ${e.message}`)
+
+    }
+
+    }
+
+})
 
 
 ////////
 
 
 
+client.on("message", message => {
 
-client.on("messent", message => {
+  if (!message.guild) return;
 
-      if (!message.guild) return;
+  if (message.content.startsWith(prefix + "ban")) {
 
-      if (message.content.startsWith(prefix + 'ban')) {
+    const MrHAMA = message.mentions.members.first();
 
+    message.guild.members.ban(MrHAMA).then(() => {
 
-        const MrHAMA = message.mentions.members.first()
+      message.reply(`Successfully baned ${MrHAMA.displayName}`);
 
-          message.guild.members.ban(MrHAMA)
+    });
 
-              .then(() => {
+  }
 
-                message.reply(`Successfully baned ${MrHAMA.displayName}`);
-
-              })
-
-             
-
-        }
-
-      });
+});
 
 ////////
 
