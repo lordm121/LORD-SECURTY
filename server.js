@@ -39,7 +39,7 @@ client.on("ready", async () => {
   console.log(`${client.guilds.cache.size} Servers .`);
   console.log(`${client.users.cache.size} Users .`);
   console.log(`Servers:${client.guilds.size}| Users:${client.users.size}.`);
-  client.user.setActivity(prefix + `help |it's time to secure your servers `,  {
+  client.user.setActivity(${prefix} + `help |new update soon😏 `,  {
     type: "PLAYING"
   });
 });
